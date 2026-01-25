@@ -43,7 +43,7 @@ outer();
 
 A Closure is a function that "remembers" its lexical environment even after the outer function has finished executing.
 
-The Anatomy of a Closure
+### The Anatomy of a Closure
 
 ```javascript
 function makeFunc() { 
