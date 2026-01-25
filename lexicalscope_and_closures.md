@@ -87,7 +87,7 @@ document.getElementById("green").onclick = clickHandler("green");
 ```
 
 ## 4. Comparison & Interview Guide
-## Lexical Scope vs. Closure
+### Lexical Scope vs. Closure
 
 ### Lexical Scope
 
