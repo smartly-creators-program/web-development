@@ -11,6 +11,8 @@ Outward Chain
 A function can access variables defined in its own scope and any parent scopes, but parent scopes cannot look inward.
 
 Example: Nested Functions
+
+```javascript
 function outer() { 
     let username = "hitesh"; 
  
@@ -28,6 +30,7 @@ function outer() {
     innerTwo(); 
 } 
 outer();
+```
 
 ### Key Scoping Rules
 Top-Down Access
@@ -42,6 +45,8 @@ Sibling functions (functions defined at the same level) cannot access each other
 A Closure is a function that "remembers" its lexical environment even after the outer function has finished executing.
 
 The Anatomy of a Closure
+
+```javascript
 function makeFunc() { 
     const name = "Mozilla"; 
     function displayName() { 
@@ -52,6 +57,7 @@ function makeFunc() {
 
 const myFunc = makeFunc(); 
 myFunc(); // Still logs "Mozilla"
+```
 
 ### Why does this happen?
 
@@ -62,6 +68,7 @@ When makeFunc is executed, it returns the displayName function. Normally, local 
 Closures are powerful for creating reusable logic without repeating code.
 
 The Problem (Redundant Code)
+```javascript
 document.getElementById("orange").onclick = function() { 
     document.body.style.backgroundColor = "orange"; 
 };
@@ -78,6 +85,7 @@ function clickHandler(color) {
 // The returned function "remembers" the specific color passed to it.
 document.getElementById("orange").onclick = clickHandler("orange"); 
 document.getElementById("green").onclick = clickHandler("green");
+```
 
 ## 4. Comparison & Interview Guide
 ## Lexical Scope vs. Closure
@@ -94,3 +102,5 @@ A function bundled together with references to its surrounding state (lexical en
 
 Answer:
 No. Technically, all functions are closures in JS, but in an interview context, it is only a "Closure" if a function is returned (or passed) and continues to access its outer scope after that outer scope has closed.
+
+LINK TO MY JS NOTES : https://drive.google.com/drive/folders/1Bu7or9zLsFmYqVFcxDrsGXEZk7vdXZ3G
