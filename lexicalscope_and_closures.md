@@ -4,11 +4,12 @@
 Lexical Scope refers to how the JavaScript engine determines the accessibility of variables based on their physical location within the source code.
 
 ### The Core Concept
-Static Determination
-Scope is decided at code writing time, not at runtime.
-Outward Chain
+- **Static Determination**  
+  Scope is decided at code writing time, not at runtime.
 
-A function can access variables defined in its own scope and any parent scopes, but parent scopes cannot look inward.
+- **Outward Chain**  
+  A function can access variables defined in its own scope and any parent scopes, but parent scopes cannot look inward.
+
 
 Example: Nested Functions
 
@@ -33,12 +34,10 @@ outer();
 ```
 
 ### Key Scoping Rules
-Top-Down Access
-Inner functions have access to outer variables.
-No Inward Access
-Outer functions cannot access variables defined inside inner functions.
-Sibling Isolation
-Sibling functions (functions defined at the same level) cannot access each other’s local variables.
+- **Top-Down Access**: Inner functions have access to outer variables.
+- **No Inward Access**: Outer functions cannot access variables defined inside inner functions.
+- **Sibling Isolation**: Sibling functions (functions defined at the same level) cannot access each other’s local variables.
+
 
 ## 2. Closures
 
@@ -71,16 +70,16 @@ The Problem (Redundant Code)
 ```javascript
 document.getElementById("orange").onclick = function() { 
     document.body.style.backgroundColor = "orange"; 
-};
-// This is repetitive if you have 10 colors.
+}; // This is repetitive if you have 10 colors.
+```
 
 The Solution (Closure-Based)
+```javascript
 function clickHandler(color) { 
     return function() { 
         document.body.style.backgroundColor = `${color}`; 
     }; 
 } 
-
 // clickHandler executes immediately and RETURNS a function
 // The returned function "remembers" the specific color passed to it.
 document.getElementById("orange").onclick = clickHandler("orange"); 
@@ -102,5 +101,3 @@ A function bundled together with references to its surrounding state (lexical en
 
 Answer:
 No. Technically, all functions are closures in JS, but in an interview context, it is only a "Closure" if a function is returned (or passed) and continues to access its outer scope after that outer scope has closed.
-
-LINK TO MY JS NOTES : https://drive.google.com/drive/folders/1Bu7or9zLsFmYqVFcxDrsGXEZk7vdXZ3G
