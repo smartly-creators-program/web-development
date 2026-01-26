@@ -87,13 +87,13 @@ document.getElementById("green").onclick = clickHandler("green");
 ```
 
 ## 4. Comparison & Interview Guide
-## Lexical Scope vs. Closure
+### Lexical Scope vs. Closure
 
-### Lexical Scope
+#### Lexical Scope
 
 Variable access determined by where the function is defined in the source code.
 
-### Closure
+#### Closure
 
 A function bundled together with references to its surrounding state (lexical environment).
 
