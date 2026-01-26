@@ -11,7 +11,7 @@ Lexical Scope refers to how the JavaScript engine determines the accessibility o
   A function can access variables defined in its own scope and any parent scopes, but parent scopes cannot look inward.
 
 
-Example: Nested Functions
+### Example: Nested Functions
 
 ```javascript
 function outer() { 
