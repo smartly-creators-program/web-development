@@ -18,7 +18,8 @@ Event Delegation relies on this bubbling behavior.
 
 ## Without Event Delegation
 
-### Html
+### HTML
+
 
 ```html
 <ul>
@@ -28,7 +29,7 @@ Event Delegation relies on this bubbling behavior.
 </ul>
 
 ```
- ### Javascript
+ ### JavaScript
  
  ```javascript
  document.querySelectorAll("li").forEach(item => {
@@ -54,7 +55,7 @@ Event Delegation relies on this bubbling behavior.
 </ul>
 
 ```
-### Javascript
+### JavaScript
 ```javascript
 document.getElementById("fruitList").addEventListener("click", (event) => {
   if (event.target.tagName === "LI") {
@@ -70,6 +71,7 @@ document.getElementById("fruitList").addEventListener("click", (event) => {
 - Cleaner and maintainable code
 
 ## Dynamic Elements Example
+Even if a new <li> is added later, Event Delegation will still work without adding a new event listener.
 ```javascript
 const list = document.getElementById("fruitList");
 
